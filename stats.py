@@ -15,3 +15,15 @@ def get_num_chars(text):
         else:
             dictionary[char] = 1
     return dictionary
+
+def sort_on(dict):
+    return dict['num']
+
+#Takes dictionary of character counts, returns ordered list of dictionaries for each character
+def sort_num_chars(dictionary):
+    unordered_list = []
+    for item in dictionary.items():
+        unordered_list.append({'char': item[0], 'num': item[1]})
+    unordered_list.sort(reverse=True, key=sort_on)
+    ordered_list = unordered_list
+    return ordered_list
